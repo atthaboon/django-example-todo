@@ -39,3 +39,12 @@ runserver
 ::
 
    (venv)$ python manage.py runserver
+
+
+deploy on heroku
+=========
+1. Goto Heroku application
+2. More --> Console
+
+::
+heroku run python manage.py migrate
