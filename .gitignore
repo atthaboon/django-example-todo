@@ -3,3 +3,5 @@ venv
 *.sqlite3
 wheelhouse
 .idea
+.vscode/settings.json
+test-reports/

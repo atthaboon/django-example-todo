@@ -24,7 +24,6 @@ migrate
 
 ::
 
-   (venv)$ cd myproject
    (venv)$ python manage.py migrate
 
 Make admin user
@@ -39,5 +38,10 @@ runserver
 
 ::
 
-   (venv)$ cd myproject
    (venv)$ python manage.py runserver
+
+Support heroku deploy
+
+Run unittest
+=========
+python -m unittest tests/TestNumber.py
