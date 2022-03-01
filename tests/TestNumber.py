@@ -8,7 +8,7 @@ class TestNumber(unittest.TestCase):
         self.assertEqual('foo'.upper(), 'FOO')
 
     def test_isupper(self):
-        self.assertTrue('FOO'.isupper())
+        self.assertTrue('FOOa'.isupper())
         self.assertFalse('Foo'.isupper())
 
 if __name__ == '__main__':
