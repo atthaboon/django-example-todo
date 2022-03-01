@@ -23,6 +23,7 @@ pipeline {
             post {
                 always {
                     junit "test-reports/*.xml"
+					slackSend channel: 'playground'
                 }
             }
         }
