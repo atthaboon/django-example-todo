@@ -22,10 +22,22 @@ pipeline {
             }
             post {
                 always {
-                    junit "test-reports/*.xml"
-					slackSend channel: "playground", color: "#3dfc70", message: "Hello world"
+					script {
+						def summary = junit "test-reports/*.xml"
+					
+						String message = """
+						Job name: *${JOB_NAME}*
+						Status: ${currentBuild.currentResult}
+						Tests: Passed ${summary.passCount}, Fail ${summary.failCount}
+						Execution Time: ${currentBuild.durationString}
+						URL: <${BUILD_URL}| View build #${BUILD_NUMBER}>
+						""".stripIndent();
+						
+						slackSend channel: "playground", color: "#3dfc70", message: message
+					}
                 }
             }
         }
     }
 }
+
